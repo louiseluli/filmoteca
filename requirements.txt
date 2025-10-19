@@ -1,0 +1,291 @@
+# ============================================================================
+# FILMOTECA - Python Requirements
+# ============================================================================
+# This file contains all Python packages needed for data processing,
+# enrichment, analysis, and recommendation engine.
+#
+# 🔧 INSTALLATION: Run `pip install -r requirements.txt`
+#
+# 📝 Version Strategy:
+# - Pinned major versions (>=X.Y) for stability
+# - Allows minor/patch updates for bug fixes
+# ============================================================================
+
+# ============================================================================
+# CORE DATA PROCESSING
+# ============================================================================
+# These are the workhorses for handling large datasets efficiently
+
+# Pandas: Industry-standard dataframe library for structured data
+# 🎯 USE: Reading CSV/TSV, data manipulation, filtering, aggregations
+pandas>=2.1.0
+
+# NumPy: Numerical computing, array operations
+# 🎯 USE: Mathematical operations, array handling, statistics
+numpy>=1.24.0
+
+# Polars: Lightning-fast dataframe library (alternative to Pandas)
+# 🎯 USE: Processing large IMDb datasets (10x faster than Pandas)
+# 🔧 CUSTOMIZE: Remove if you prefer Pandas-only approach
+polars>=0.19.0
+
+# PyArrow: Columnar data format, enables Parquet files
+# 🎯 USE: Efficient storage of processed data, fast I/O
+pyarrow>=13.0.0
+
+# ============================================================================
+# FILE FORMAT HANDLING
+# ============================================================================
+# For reading various data formats
+
+# openpyxl: Read/write Excel files (.xlsx)
+# 🎯 USE: If you have Excel exports or want to create Excel reports
+openpyxl>=3.1.0
+
+# python-dotenv: Load environment variables from .env file
+# 🎯 USE: Managing API keys and configuration securely
+python-dotenv>=1.0.0
+
+# ============================================================================
+# WEB SCRAPING & API CLIENTS
+# ============================================================================
+# For fetching data from external sources
+
+# Requests: HTTP library for making API calls
+# 🎯 USE: Calling TMDB, OMDB, Wikidata, Does the Dog Die APIs
+requests>=2.31.0
+
+# aiohttp: Async HTTP client for faster API calls
+# 🎯 USE: Parallel API requests to speed up enrichment (100x faster)
+aiohttp>=3.9.0
+
+# httpx: Modern HTTP client with async support
+# 🎯 USE: Alternative to requests with better async support
+httpx>=0.25.0
+
+# Beautiful Soup: HTML parsing for web scraping
+# 🎯 USE: Parsing IMDb web pages if needed, extracting structured data
+beautifulsoup4>=4.12.0
+
+# lxml: Fast XML/HTML parser
+# 🎯 USE: Faster parsing for BeautifulSoup
+lxml>=4.9.0
+
+# ============================================================================
+# DATABASE & ORM
+# ============================================================================
+# For storing and querying data efficiently
+
+# SQLAlchemy: SQL toolkit and ORM
+# 🎯 USE: Database schema, queries, migrations
+sqlalchemy>=2.0.0
+
+# alembic: Database migration tool for SQLAlchemy
+# 🎯 USE: Version control for database schema changes
+alembic>=1.12.0
+
+# ============================================================================
+# DATA VALIDATION & CLEANING
+# ============================================================================
+# Ensuring data quality and consistency
+
+# pydantic: Data validation using Python type annotations
+# 🎯 USE: Validating API responses, data models, configuration
+pydantic>=2.4.0
+
+# python-dateutil: Powerful date/time parsing
+# 🎯 USE: Parsing various date formats from different sources
+python-dateutil>=2.8.0
+
+# ============================================================================
+# NATURAL LANGUAGE PROCESSING & TEXT ANALYSIS
+# ============================================================================
+# For analyzing movie descriptions, reviews, genres
+
+# NLTK: Natural Language Toolkit
+# 🎯 USE: Tokenization, stopwords, text preprocessing
+nltk>=3.8.0
+
+# spaCy: Industrial-strength NLP
+# 🎯 USE: Named entity recognition, advanced text analysis
+# 🔧 AFTER INSTALL: Run `python -m spacy download en_core_web_sm`
+spacy>=3.7.0
+
+# scikit-learn: Machine learning library
+# 🎯 USE: TF-IDF, clustering, similarity calculations, recommendations
+scikit-learn>=1.3.0
+
+# sentence-transformers: Semantic text embeddings
+# 🎯 USE: Creating movie plot embeddings for semantic search
+# 🔧 NOTE: Downloads ~400MB model on first use
+sentence-transformers>=2.2.0
+
+# ============================================================================
+# RECOMMENDATION ALGORITHMS
+# ============================================================================
+# Specialized libraries for building recommendation systems
+
+# implicit: Fast collaborative filtering algorithms
+# 🎯 USE: Matrix factorization, ALS for recommendations
+implicit>=0.7.0
+
+# lightfm: Hybrid recommendation system
+# 🎯 USE: Combining collaborative + content-based filtering
+lightfm>=1.17
+
+# surprise: Python scikit for recommender systems
+# 🎯 USE: Traditional recommendation algorithms (SVD, KNN)
+scikit-surprise>=1.1.3
+
+# ============================================================================
+# DATA VISUALIZATION & ANALYSIS
+# ============================================================================
+# For creating charts and visual insights
+
+# matplotlib: Comprehensive plotting library
+# 🎯 USE: Creating static charts, histograms, scatter plots
+matplotlib>=3.8.0
+
+# seaborn: Statistical data visualization (built on matplotlib)
+# 🎯 USE: Beautiful statistical plots, heatmaps, distribution plots
+seaborn>=0.13.0
+
+# plotly: Interactive plots
+# 🎯 USE: Interactive visualizations for web app (can export to JSON)
+plotly>=5.17.0
+
+# ============================================================================
+# STATISTICAL ANALYSIS
+# ============================================================================
+# For deep statistical analysis of your movie preferences
+
+# scipy: Scientific computing library
+# 🎯 USE: Statistical tests, distributions, advanced math
+scipy>=1.11.0
+
+# statsmodels: Statistical modeling
+# 🎯 USE: Time series analysis (watching patterns over time)
+statsmodels>=0.14.0
+
+# ============================================================================
+# CACHING & PERFORMANCE
+# ============================================================================
+# Speed up repeated operations
+
+# joblib: Disk caching and parallel processing
+# 🎯 USE: Cache API results, parallelize data processing
+joblib>=1.3.0
+
+# diskcache: Fast disk and memory caching
+# 🎯 USE: Cache processed IMDb data, API responses
+diskcache>=5.6.0
+
+# ============================================================================
+# PROGRESS BARS & LOGGING
+# ============================================================================
+# Better user experience during long-running operations
+
+# tqdm: Progress bars for loops
+# 🎯 USE: Show progress when processing 2,280 movies or downloading IMDb data
+tqdm>=4.66.0
+
+# rich: Rich text and beautiful formatting in terminal
+# 🎯 USE: Colorful logs, progress bars, tables in terminal
+rich>=13.6.0
+
+# loguru: Simple and powerful logging
+# 🎯 USE: Better logging than built-in logging module
+loguru>=0.7.0
+
+# ============================================================================
+# UTILITIES
+# ============================================================================
+# Helpful utilities for various tasks
+
+# pytz: Timezone calculations
+# 🎯 USE: Handling timezones for date fields
+pytz>=2023.3
+
+# pycountry: ISO country, language, currency data
+# 🎯 USE: Converting country codes, validating language codes
+pycountry>=23.12.0
+
+# fuzzywuzzy: Fuzzy string matching
+# 🎯 USE: Matching movie titles across different sources
+# 🔧 REQUIRES: python-Levenshtein for speed
+fuzzywuzzy[speedup]>=0.18.0
+
+# python-Levenshtein: Fast string distance calculations
+# 🎯 USE: Speeds up fuzzywuzzy matching
+python-Levenshtein>=0.23.0
+
+# unidecode: Unicode text to ASCII transliteration
+# 🎯 USE: Normalizing movie titles with special characters
+unidecode>=1.3.0
+
+# ============================================================================
+# DATA EXPORT
+# ============================================================================
+# For exporting processed data in various formats
+
+# jsonlines: Reading/writing JSON Lines files
+# 🎯 USE: Efficient streaming JSON format
+jsonlines>=4.0.0
+
+# pyyaml: YAML parser and emitter
+# 🎯 USE: Configuration files, human-readable data exports
+pyyaml>=6.0.0
+
+# ============================================================================
+# TESTING & DEVELOPMENT
+# ============================================================================
+# Tools for testing and code quality (optional but recommended)
+
+# pytest: Testing framework
+# 🎯 USE: Unit tests for data processing functions
+pytest>=7.4.0
+
+# pytest-cov: Coverage plugin for pytest
+# 🎯 USE: Check how much of your code is tested
+pytest-cov>=4.1.0
+
+# black: Code formatter
+# 🎯 USE: Automatically format Python code to PEP 8 standard
+black>=23.10.0
+
+# flake8: Code linter
+# 🎯 USE: Find code quality issues
+flake8>=6.1.0
+
+# isort: Import sorter
+# 🎯 USE: Organize imports automatically
+isort>=5.12.0
+
+# mypy: Static type checker
+# 🎯 USE: Catch type errors before runtime
+mypy>=1.6.0
+
+# ============================================================================
+# 🔧 OPTIONAL PACKAGES - Uncomment if needed
+# ============================================================================
+
+# fastapi: Modern web framework for building APIs
+# 🎯 USE: If you want to create a Python backend API
+# fastapi>=0.104.0
+# uvicorn>=0.24.0  # ASGI server for FastAPI
+
+# pillow: Image processing library
+# 🎯 USE: If you want to download/process movie posters
+# pillow>=10.1.0
+
+# wordcloud: Generate word clouds
+# 🎯 USE: Visualize your most-watched genres/directors
+# wordcloud>=1.9.0
+
+# networkx: Network analysis
+# 🎯 USE: Create director-actor collaboration networks
+# networkx>=3.2
+
+# ============================================================================
+# 🔧 CUSTOM PACKAGES
+# ============================================================================
