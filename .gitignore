@@ -1,0 +1,245 @@
+# ============================================================================
+# FILMOTECA - .gitignore
+# ============================================================================
+# This file tells Git which files and folders to ignore and not track.
+# Properly configured to handle large IMDb datasets, API keys, and build artifacts.
+#
+
+# ============================================================================
+
+# ============================================================================
+# SENSITIVE DATA 
+# ============================================================================
+# These contain API keys and credentials
+.env
+.env.local
+.env.production
+.env.development
+*.env
+
+# API keys backup files
+*api_keys*
+*secrets*
+credentials.json
+
+
+# ============================================================================
+# LARGE DATA FILES - IMDb Datasets
+# ============================================================================
+# IMDb datasets are HUGE (8GB+). 
+# We'll only commit the processed, smaller JSON files.
+
+# Raw IMDb TSV files 
+data/raw/imdb/*.tsv
+data/raw/imdb/*.tsv.gz
+data/raw/imdb/*.gz
+*.tsv
+*.tsv.gz
+
+# IMDb database files (generated locally)
+data/raw/*.db
+data/raw/*.sqlite
+data/raw/*.sqlite3
+*.db
+*.sqlite
+*.sqlite3
+
+# Large processed files 
+data/processed/*.parquet
+data/processed/*.feather
+data/processed/*.hdf5
+data/processed/*.h5
+
+
+# ============================================================================
+# USER DATA - Your Personal Movie Collection
+# ============================================================================
+
+# Personal movie collection files 
+data/raw/Watched.csv
+
+# Generated user profile data
+data/processed/user_profile_private.json
+data/processed/personal_notes.json
+
+# ============================================================================
+# PYTHON
+# ============================================================================
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Virtual environments
+venv/
+env/
+ENV/
+.venv
+.conda/
+*.egg-info/
+
+# Distribution / packaging
+build/
+dist/
+wheels/
+*.egg
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# Python logs
+*.log
+pip-log.txt
+
+# MyPy type checking
+.mypy_cache/
+.dmypy.json
+
+# 🔧 CUSTOMIZE: Add any Python-specific patterns you use
+
+# ============================================================================
+# NODE.JS / REACT / VITE
+# ============================================================================
+# Dependencies
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Build output
+dist/
+build/
+out/
+.next/
+.nuxt/
+
+# Vite build cache
+.vite/
+vite.config.js.timestamp-*
+vite.config.ts.timestamp-*
+
+# Production build
+*.production
+
+# Testing
+coverage/
+
+
+
+# ============================================================================
+# LOGS & REPORTS
+# ============================================================================
+# Log files (generated during data processing)
+data/logs/*.log
+data/logs/*.txt
+logs/
+*.log
+
+# Large report files 
+data/reports/*.html
+data/reports/*.pdf
+data/reports/eda/*.html
+
+
+# ============================================================================
+# CACHE & TEMPORARY FILES
+# ============================================================================
+# Cache directories
+.cache/
+.parcel-cache/
+.eslintcache
+.stylelintcache
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# ============================================================================
+# IDE & EDITOR
+# ============================================================================
+# VSCode
+.vscode/
+*.code-workspace
+
+# PyCharm
+.idea/
+*.iml
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Vim
+*.swp
+*.swo
+
+
+# ============================================================================
+# DOCKER (if you decide to use it later)
+# ============================================================================
+# Docker volumes and compose overrides
+docker-compose.override.yml
+.docker/
+
+# ============================================================================
+# DATA SCIENCE & ML
+# ============================================================================
+# Model files (can be large)
+models/*.pkl
+models/*.joblib
+models/*.h5
+models/*.pth
+*.model
+
+# Data science scratch work
+scratch/
+experiments/
+notebooks/.ipynb_checkpoints/
+
+
+# ============================================================================
+# GITHUB PAGES BUILD
+# ============================================================================
+# GitHub Pages uses 'gh-pages' branch, but we ignore local build artifacts
+.github/
+!.github/workflows/
+
+# ============================================================================
+# KEEP THESE - DO NOT IGNORE
+# ============================================================================
+
+
+!.gitignore (this file itself)
+!.gitkeep (placeholder files)
+!package.json
+!requirements.txt
+!vite.config.js
+!README.md
+
+# ============================================================================
+# 🔧  CUSTOM PATTERNS
+# ============================================================================
